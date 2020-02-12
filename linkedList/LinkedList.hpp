@@ -118,58 +118,44 @@ bool LinkedList<T>::removeBack()
 	Node<T>* secondintoLast = nullptr;
 	bool isRemoved = false;
 
+	if(size() < 1 || m_front == nullptr)
+		return (isRemoved = false);
+	else
+	{
+		lastNode = m_front;
+		if(size() == 1)
+		{
+				m_size--;
+			delete m_front;
+			m_front = nullptr;
+			isRemoved = true;
+		}
+		else if(size()== 2){
+			lastNode = lastNode->getNext();
+			m_size--;
+			delete lastNode;
+			isRemoved = true;
+			lastNode = nullptr;
+		}
+		else if(size() > 2 && lastNode != nullptr)
+		{
+			while(lastNode->getNext() != nullptr)
+			{
+				secondintoLast = lastNode;
+				lastNode = lastNode->getNext();
+			}
+			secondintoLast->setNext(nullptr);
+			delete lastNode;
+			m_size--;
+			isRemoved = true;
+		} // 1->2->3-> nullptr
+	}
+
 
 	/** TODO
 		Fix this method
 	*/
-secondintoLast = m_front;
-	if(!isEmpty())
-	{
 
-
-		//for(int i = 1; i <=size(); i++)
-		while(secondintoLast->getNext() != nullptr)
-		{
-			//if(i == size() -1)
-					secondintoLast = secondintoLast->getNext();
-		//	if( != size())
-			//	secondintoLast = secondintoLast->getNext();
-		}
-
-		if(size() == 1)
-		{
-			lastNode = m_front;
-			delete lastNode;
-			lastNode = nullptr;
-			secondintoLast = nullptr;
-			m_front = nullptr;
-			m_size--;
-		}
-		else if(size () == 2)
-		{
-				delete secondintoLast;
-				m_front->setNext(nullptr);
-				secondintoLast = nullptr;
-				m_size--;
-		}
-		else
-		{
-		lastNode = secondintoLast->getNext();
-//		lastNode = lastNode->getNext();
-		delete lastNode;
-		secondintoLast->setNext(nullptr);
-
-		lastNode = nullptr;
-		m_size--;
-
-		}
-		isRemoved = true;
-	}
-	else if(size() < 1)
-		{m_front = nullptr;
-		lastNode = nullptr;
-		secondintoLast = nullptr;
-	}
 	return(isRemoved);
 }
 
