@@ -150,12 +150,6 @@ bool LinkedList<T>::removeBack()
 			isRemoved = true;
 		} // 1->2->3-> nullptr
 	}
-
-
-	/** TODO
-		Fix this method
-	*/
-
 	return(isRemoved);
 }
 
