@@ -1,10 +1,16 @@
 /**
+<<<<<<< HEAD
 *	@author Michael Collins
 *	@date Feb 6
+=======
+*	@author 
+*	@date 
+>>>>>>> b7a1158142df84b32e499f039f7cca0675cb2546
 *	@file LinkedList.hpp
 *	@brief Implementation file for templated LinkedList class
 */
 
+<<<<<<< HEAD
 /*
 
     In your local repository, create working method definitions for all Linked List methods that currently have dummy returns (look for TODO notes in the LinkedList.hpp)
@@ -12,6 +18,8 @@
     Use the provided test code to verify your changes work
     After you have it working locally, push your master branch to your fork
 */
+=======
+>>>>>>> b7a1158142df84b32e499f039f7cca0675cb2546
 template <typename T>
 LinkedList<T>::LinkedList() : m_front(nullptr), m_size(0)
 {
@@ -19,7 +27,11 @@ LinkedList<T>::LinkedList() : m_front(nullptr), m_size(0)
 }
 
 template <typename T>
+<<<<<<< HEAD
 LinkedList<T>::~LinkedList()
+=======
+LinkedList<T>::~LinkedList() 
+>>>>>>> b7a1158142df84b32e499f039f7cca0675cb2546
 {
 	while(!isEmpty())
 	{
@@ -36,7 +48,14 @@ bool LinkedList<T>::isEmpty() const
 template <typename T>
 int LinkedList<T>::size() const
 {
+<<<<<<< HEAD
 	return(m_size);
+=======
+	/** TODO 
+		Fix this method
+	*/
+	return(0);
+>>>>>>> b7a1158142df84b32e499f039f7cca0675cb2546
 }
 
 template <typename T>
@@ -45,6 +64,7 @@ bool LinkedList<T>::search(T value) const
 	Node<T>* temp = m_front;
 	bool isFound = false;
 
+<<<<<<< HEAD
 	if(!isEmpty() && temp != nullptr)
 	{
 		if(value == temp->getValue())
@@ -60,6 +80,12 @@ bool LinkedList<T>::search(T value) const
 		}
 		return isFound;
 	}
+=======
+	/** TODO 
+		Fix this method
+	*/
+
+>>>>>>> b7a1158142df84b32e499f039f7cca0675cb2546
 	return(isFound);
 }
 
@@ -75,8 +101,13 @@ std::vector<T> LinkedList<T>::toVector() const
 		temp = temp->getNext();
 	}
 
+<<<<<<< HEAD
 	return(vec);
 
+=======
+	return(vec);	
+	
+>>>>>>> b7a1158142df84b32e499f039f7cca0675cb2546
 }
 
 template <typename T>
@@ -86,7 +117,11 @@ void LinkedList<T>::addBack(T value)
 
 	if(isEmpty())
 	{
+<<<<<<< HEAD
 		m_front = new Node<T>(value);
+=======
+		m_front = new Node<T>(value);	
+>>>>>>> b7a1158142df84b32e499f039f7cca0675cb2546
 	}
 	else
 	{
@@ -96,7 +131,11 @@ void LinkedList<T>::addBack(T value)
 			temp = temp->getNext();
 		}
 
+<<<<<<< HEAD
 		temp->setNext( new Node<T>(value) );
+=======
+		temp->setNext( new Node<T>(value) );		
+>>>>>>> b7a1158142df84b32e499f039f7cca0675cb2546
 	}
 
 	m_size++;
@@ -118,6 +157,7 @@ bool LinkedList<T>::removeBack()
 	Node<T>* secondintoLast = nullptr;
 	bool isRemoved = false;
 
+<<<<<<< HEAD
 	if(size() < 1 || m_front == nullptr)
 		return (isRemoved = false);
 	else
@@ -152,6 +192,14 @@ bool LinkedList<T>::removeBack()
 	}
 	return(isRemoved);
 }
+=======
+	/** TODO 
+		Fix this method
+	*/
+
+	return(isRemoved);
+}	
+>>>>>>> b7a1158142df84b32e499f039f7cca0675cb2546
 
 template <typename T>
 bool LinkedList<T>::removeFront()
