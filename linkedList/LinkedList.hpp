@@ -146,7 +146,7 @@ bool LinkedList<T>::removeBack()
 			m_size--;
 			isRemoved = true;
 		} // 1->2->3-> nullptr
-	}
+
 	return(isRemoved);
 }
 
